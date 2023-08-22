@@ -32,15 +32,15 @@ def main():
         download_file(filename)
 
     # Once we have the dependencies, add a selector for the app mode on the sidebar.
-    st.sidebar.title("What to do")
-    app_mode = st.sidebar.selectbox("Choose the app mode",
-        ["Show instructions", "Run the app", "Show the source code"])
-    if app_mode == "Show instructions":
-        st.sidebar.success('To continue select "Run the app".')
-    elif app_mode == "Show the source code":
+    st.sidebar.title("Interactuar con la IA DEMO IEEE NAPOLEON PEREZ")
+    app_mode = st.sidebar.selectbox("Seleccionar el app mode",
+        ["Instrucciones", "Correr la app", "Mostrar codigo Fuente"])
+    if app_mode == "Seleccionar instrucciónes":
+        st.sidebar.success('Correr app')
+    elif app_mode == "Ver código":
         readme_text.empty()
         st.code(get_file_content_as_string("streamlit_app.py"))
-    elif app_mode == "Run the app":
+    elif app_mode == "Correr la app":
         readme_text.empty()
         run_the_app()
 
@@ -82,7 +82,7 @@ def download_file(file_path):
         if progress_bar is not None:
             progress_bar.empty()
 
-# This is the main app app itself, which appears when the user selects "Run the app".
+# This is the main app app itself, which appears when the user selects "Correr la app".
 def run_the_app():
     # To make Streamlit fast, st.cache allows us to reuse computation across runs.
     # In this common pattern, we download data from an endpoint only once.
